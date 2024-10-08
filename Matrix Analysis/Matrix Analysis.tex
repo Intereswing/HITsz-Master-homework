@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Matrix Analysis Homework}
+\author{Intereswing}
+
+\begin{document}
+	
+\maketitle
+\paragraph{1}
+\textcircled{1} is equivalent to
+\begin{align*}
+	x_1 + \frac{4}{3} x_2 - \frac{5}{3}x_3 + \frac{7}{3}x_4 &= 0 \\
+	x_2 - \frac{19}{17}x_3 + \frac{20}{17}x_4 &=0
+\end{align*}
+
+The solution is 
+\begin{align*}
+	x_1 &= \frac{3}{17}x_3 - \frac{13}{17}x_4\\
+	x_2 &= \frac{19}{17}x_3 - \frac{20}{17}x_4
+\end{align*}
+
+So
+\begin{align*}
+	V_1 &= \mathrm{span}\{[\frac{3}{17}\quad \frac{19}{17} \quad 1 \quad 0]^\top , [-\frac{13}{17}\quad -\frac{20}{17} \quad 0 \quad 1]^\top\} \\
+	&= \mathrm{span}\{[3\quad19\quad17\quad0]^\top, [-13\quad-20\quad0\quad17]^\top \}
+\end{align*}
+
+Similarly, it can be derived that
+\[
+V_2 = \mathrm{span}\{[3\quad19\quad17\quad0]^\top, [-13\quad-20\quad0\quad17]^\top \}  
+\]
+
+(1) $V_1 + V_2 = \mathrm{span}\{[3\quad19\quad17\quad0]^\top, [-13\quad-20\quad0\quad17]^\top \}$.
+
+The basis of it is $[3\quad19\quad17\quad0]^\top$ and $[-13\quad-20\quad0\quad17]^\top$.
+
+The dimension of it is $2$.
+
+(2) $V_1 \cap V_2 = \mathrm{span}\{[3\quad19\quad17\quad0]^\top, [-13\quad-20\quad0\quad17]^\top \}$.
+
+The basis of it is $[3\quad19\quad17\quad0]^\top$ and $[-13\quad-20\quad0\quad17]^\top$.
+
+The dimension of it is $2$.
+
+\paragraph{2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+\end{document}

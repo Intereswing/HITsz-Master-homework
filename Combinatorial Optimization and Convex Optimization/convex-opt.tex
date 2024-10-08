@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Convex Optimization Homework}
+\author{Intereswing}
+
+\begin{document}
+
+
+\maketitle
+\section{Homework 1}
+\paragraph{1}
+\begin{align*}
+	\nabla^2 f(x) = H \in \mathbf{R}^{n\times n},\; &\mathrm{where} \; H_{ij} = \frac{1}{n^2 x_i x_j}(x_1\cdot x_2 \cdot\dots\cdot x_n)^{\frac{1}{n}}\; \mathrm{for}\; i\neq j\\
+	&\mathrm{and}\; H_{ii} = \frac{1-n}{n^2 x_i^2}(x_1\cdot x_2 \cdot\dots\cdot x_n)^{\frac{1}{n}}
+\end{align*}
+So $H = \frac{1}{n^2}(x_1\cdot x_2 \cdot\dots\cdot x_n)^{\frac{1}{n}} ([\frac{1}{x_1}\; \frac{1}{x_2} \dots \frac{1}{x_n}]^\top[\frac{1}{x_1}\; \frac{1}{x_2} \dots \frac{1}{x_n}] - n\mathbf{diag}(\frac{1}{x_1^2}, \frac{1}{x_2^2}, \dots, \frac{1}{x_n^2}))$. For any $\omega \in \mathbf{R}^n$,
+\[
+w^\top Hw = \frac{1}{n^2}(x_1\cdot x_2 \cdot\dots\cdot x_n)^{\frac{1}{n}} ((\sum_{i=1}^n\frac{w_i}{x_i})^2 - \sum_{i=1}^n 1^2\sum_{i=1}^n \frac{w_i^2}{x_i^2})\leq 0
+\]
+, which follows from the Cauchy-Schwarz inequality.
+
+So $H\preceq 0$. Consequently, $f(x)$ is concave on $\mathbf{dom}f = \mathbf{R}_{++}^n $.
+	
+\paragraph{2}
+Let $A = \{x \mid \Vert x\Vert_2 \leq 2 \}$. For any $x_1, x_2 \in A$ and any $\theta$ with $0\leq \theta \leq 1$, we have
+\[
+\Vert\theta x_1+(1-\theta)x_2\Vert_2 \leq \Vert\theta x_1 \Vert_2 + \Vert(1-\theta) x_2 \Vert_2 = \theta \Vert x_1\Vert_2 + (1-\theta)\Vert x_2\Vert_2 \leq 2\theta+2(1-\theta) = 2
+\]
+So $\theta x_1+(1-\theta)x_2 \in A$, which means $A$ is convex. Thus $\mathbf{dom}f = \mathbf{R}_{++}^n \cap A$ is also convex.
+
+Similarly to problem 1, we can conclude that $f(x)$ is concave on $\mathbf{dom}f = \mathbf{R}_{++}^n \cap \{x \mid \Vert x\Vert_2 \leq 2 \}$.
+
+
+
+\pagebreak
+\paragraph{3}
+For any $x_1, x_2 \in \mathbf{R} $ and any $\theta$ with $0\leq \theta \leq 1$, we have
+\[
+|\theta x_1 + (1-\theta)x_2|^p \leq ||\theta x_1| + |(1-\theta)x_2||^p = (\theta|x_1| + (1-\theta)|x_2|)^p
+\]
+If $x_1x_2=0$, supposing $x_1=0$,
+\[
+|\theta x_1 + (1-\theta)x_2|^p = (1-\theta)^p|x_2|^p \leq \theta |x_1|^p + (1-\theta)|x_2|^p
+\]
+On the other hand, if $x_1x_2\ne0$, we consider $g(x)=x^p$ on $\mathbf{dom}g=\mathbf{R}_{++}$. $g''(x) = p(p-1)x^{p-2} \ge 0$, so $g(x)$ is convex. Thus for any $v_1, v_2>0$, and any $\theta$ with $0\leq \theta \leq 1$, we have
+\[
+(\theta v_1 + (1-\theta)v_2)^p \le \theta v_1^p + (1-\theta)v_2^p 
+\]
+Thus 
+\[
+|\theta x_1 + (1-\theta)x_2|^p \le (\theta|x_1| + (1-\theta)|x_2|)^p \le \theta |x_1|^p + (1-\theta)|x_2|^p 
+\]
+
+In summary, $|\theta x_1 + (1-\theta)x_2|^p \le \theta |x_1|^p + (1-\theta)|x_2|^p $. Thus $f(x) = |x|^p$ is convex.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
