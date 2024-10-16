@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage[ruled]{algorithm}
+\usepackage{algorithmic}
 
 \title{Advanced Algorithms Homework}
 \author{Intereswing}
@@ -10,9 +12,18 @@
 \section{Lecture 8: Augmenting Data Structures}
 \paragraph{1}
 
+Insertion into a red-black tree consists of two phases. The first phase inserts the new node, and the second phase maintaining the red-black properties, which may perform rotations. 
 
+To maintain the rank of subtree in the first phase, simply increment $x.rank$ for each node $x$, whose left child is also on the simple path traversed from the root down towards the leaves.
 
+In the second phase, the only structural changes to the underlying red-black tree are caused by rotations. Moreover, only one node have its $rank$ attributes invalidated in a rotation. Referring to the code for $\textsc{Left-Rotate}(T,x)$ on page 336 in \textit{Introduction to Algorithms}, add the following line:
 
+\addtocounter{algorithm}{1}
+\begin{algorithm}
+\begin{algorithmic}[1]
+	\STATE \(y.rank = x.rank + y.rank\)
+\end{algorithmic}
+\end{algorithm}
 
 
 
